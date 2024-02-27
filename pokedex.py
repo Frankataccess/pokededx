@@ -1,7 +1,7 @@
 #~~~~~~~~~~~~~~~~~imports~~~~~~~~~~~~~~~~~~~~~~~~~~
 import requests
 import pandas as pd 
-import tkinter 
+import tkinter as tk
 #~~~~~~~~~~~~~~~~~~check API ~~~~~~~~~~~~~~~~~~~~~~~
 #send HTTP GET request to the API endpoint
 start_url = "https://pokeapi.co/api/v2/pokemon/"
@@ -29,4 +29,4 @@ poketable= {'Username': [],
 df = pd.DataFrame(poketable)
 
 # Save the dataframe to a CSV file
-df.to_csv('Biodata.csv', index=False)
+df.to_csv('poketable.csv', index=False)
