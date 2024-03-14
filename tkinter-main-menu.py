@@ -46,7 +46,7 @@ def main_menu_run ():
 
     #~~~~~~~~~~~~~~title~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-    title = tk.Label(main_menu,text="Main Menu", font=custom_font,height=20,width=20,bg="black")
+    title = tk.Label(main_menu,text="Main Menu", font=custom_font,height=20,width=20,)
 
 
     #~~~~~~~~~~~~~~~~button functions~~~~~~~~~~~~~~
@@ -63,15 +63,15 @@ def main_menu_run ():
         main_menu.quit()
 
     #~~~~~~~~~~~~~~~~buttons~~~~~~~~~~~~~~~~~~~~~~~
-    pokemon_button = tk.Button(main_menu,text = "Pokemon", relief= "raised", command= pokemon_menu )
-    my_team_button = tk.Button(main_menu,text = "My Team", relief= "raised", command= my_team_menu )
-    account_button = tk.Button(main_menu,text = "Account", relief= "raised", command= account_menu )
-    exit_button = tk.Button(main_menu,text = "Exit", relief= "raised", command= exit_command )
+    pokemon_button = tk.Button(main_menu,text = "Pokemon", relief= "raised", command= pokemon_menu, width= button_x, height=button_y, bg = "blue" )
+    my_team_button = tk.Button(main_menu,text = "My Team", relief= "raised", command= my_team_menu, width= button_x, height=button_y,bg = "yellow")
+    account_button = tk.Button(main_menu,text = "Account", relief= "raised", command= account_menu, width= button_x, height=button_y, bg = "green")
+    exit_button = tk.Button(main_menu,text = "Exit", relief= "raised", command= exit_command, width= button_x, height=button_y ,bg = "pink" )
 
     #~~~~~~~~~~~~~~~~placements~~~~~~~~~~~~~~~~~~~
 
     gif_label = tk.Label(main_menu, image="")
-    gif_label.place(x=0, y=0)
+    gif_label.place(x=0, y=0) 
 
     pokemon_title_label = tk.Label(main_menu, image=pokemon_title)
     pokemon_title_label.place(x=gif_x, y=0)
@@ -79,7 +79,12 @@ def main_menu_run ():
     gif_label_2 = tk.Label(main_menu, image="")
     gif_label_2.place(x=window_x - gif_x, y=0)  # Adjust the x-coordinate
 
-    title.place(x = window_x / 2 - 40 , y = gif_y)
+    title.place(x = (window_x - (gif_x * 4))  / 2, y = -(0.5 * window_y) + gif_y + 20)
+
+    pokemon_button.place(x= (window_x - (gif_x * 4)) / 2 , y= 100)
+    my_team_button.place(x= (window_x - (gif_x * 4)) / 2 ,y=100 + (button_y * 2))
+    account_button.place(x= (window_x - (gif_x * 4)) / 2 ,y=1)
+    exit_button.place(x= (window_x - (gif_x * 2)) / 2 + 20 ,y=1)
 
     #~~~~~~~~~~~~~~~run~~~~~~~~~~~~~~
 
